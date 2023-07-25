@@ -1,0 +1,19 @@
+{% extends 'base-tableau-de-bord.html.twig' %}
+
+{% block title %}Ajouter des adhérents en masse{% endblock %}
+
+{% block stylesheets %}
+		<link type="text/css" rel="stylesheet" href="/css/excel.css">
+{% endblock %}
+
+{% block contenu %}
+<section class="section-1">
+	<h1>Ajouter des adhérents en masse depuis un fichier Excel</h1>
+	
+	{% if message %}<p>{{ message }}</p>{% endif %}
+	
+	<p>Format du fichier Excel (extension de fichier « .xlsx ») : un adhérent par ligne avec dans l'ordre nom, prénom, adresse e-mail et date de fin de l'adhésion au format AAAA-MM-JJ. La première ligne du fichier Excel n'est pas interprétée. La taille maximale du fichier est 5 Mo.</p>
+	
+	{{ form(formulaire) }}
+</section>
+{% endblock %}

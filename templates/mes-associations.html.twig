@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes associations{% endblock %}
+
+{% block stylesheets %}
+        <link type="text/css" rel="stylesheet" href="/css/mes_associations.css">
+{% endblock %}
+
+{% block body %}
+<h1>Mes associations</h1>
+
+<h2>Les associations auxquelles j'ai adhéré</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Nom</th>
+        <th>Description</th>
+        <th>Prix mensuel de l'adhésion</th>
+        <th>Date de fin de l'adhésion</th>
+    </tr>
+    </thead>
+    {% for adhesion in adhesions %}
+    <tbody>
+    <tr>
+        <td data-column="Nom">{{ adhesion.association.nom }}</td>
+        <td data-column="Description">{{ adhesion.association.description }}</td>
+        <td data-column="Prix mensuel de l'adhésion">{{ adhesion.association.prixAdhesionMensuelle }} € / mois</td>
+        <td data-column="Date de fin de l'adhésion">{{ adhesion.dateFin|date() }}</td>
+    </tr>
+    </tbody>
+    {% endfor %}
+</table>
+
+<h2>Les associations dont je suis le gérant</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Nom</th>
+        <th>Description</th>
+        <th>Prix mensuel de l'adhésion</th>
+        <th>Lien vers le tableau de bord</th>
+    </tr>
+    </thead>
+    {% for association in associationsGerees %}
+    <tbody>
+    <tr>
+        <td data-column="Nom">{{ association.nom }}</td>
+        <td data-column="Description">{{ association.description }}</td>
+        <td data-column="Prix mensuel de l'adhésion">{{ association.prixAdhesionMensuelle }} € / mois</td>
+        <td data-column="Date de fin de l'adhésion"><a href="/tableau-de-bord/accueil/{{ association.id }}">Tableau de bord</a></td>
+    </tr>
+    </tbody>
+    {% endfor %}
+</table>
+{% endblock %}

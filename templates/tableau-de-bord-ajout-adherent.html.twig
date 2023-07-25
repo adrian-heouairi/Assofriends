@@ -1,0 +1,14 @@
+{% extends 'base-tableau-de-bord.html.twig' %}
+{% block title %}Ajouter un adhérent{% endblock %}
+
+{% block stylesheets %}
+		<link type="text/css" rel="stylesheet" href="/css/ajout_adherent.css">
+{% endblock %}
+
+{% block contenu %}
+<section class="section-1">
+	<h1>Ajouter un adhérent</h1>
+	{% if message %}<p>{{ message }}</p>{% endif %}
+	{{ form(formulaire) }}
+</section>
+{% endblock %}

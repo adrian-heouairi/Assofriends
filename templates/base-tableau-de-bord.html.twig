@@ -1,0 +1,83 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+		<link type="text/css" rel="stylesheet" href="/css/tab_bord.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"  >
+        {% endblock %}
+
+       {% block body %}
+	<input type="checkbox" id="checkbox">
+	<span class="menu-header">
+		<h2 class="u-name">MENU
+			<label for="checkbox">
+				<i id="nav-btn" class="fas fa-bars"></i>
+			</label>
+		</h2>	
+	</span>
+	<span class="menu-body">
+		<nav class="sidebar">
+			<span class="user-p">
+				<!-- <img src="/img/asso.png"> -->
+				<h2 style="color: white; font-size: 30px;">Tableau de bord de {{ association.nom }}</h2>
+			</span>
+			<ul>
+				<li>
+					<a href="/tableau-de-bord/accueil/{{ association.id }}">
+						<i class="fas fa-desktop"></i>
+						<span>Accueil</span>
+					</a>
+				</li>
+				<li>
+					<a href="/tableau-de-bord/contacts/{{ association.id }}">
+						<i class="fas fa-address-book"></i>
+						<span>Contacts</span>
+					</a>
+				</li>
+				<li>
+					<a href="/tableau-de-bord/publipostage/{{ association.id }}">
+						<i class="fas fa-envelope-open-text"></i>
+						<span>E-mail en masse</span>
+					</a>
+				</li>
+				<li>
+					<a href="/tableau-de-bord/ajout-adherent/{{ association.id }}">
+						<i class="fas fa-user-plus"></i>
+						<span>Ajouter un adhérent</span>
+					</a>
+				</li>
+				<li>
+					<a href="/tableau-de-bord/ajout-excel/{{ association.id }}">
+						<i class="fas fa-user-plus"></i>
+						<span>Ajouter des adhérents en masse</span>
+					</a>
+				</li>
+				<li>
+					<a href="/tableau-de-bord/accueil/{{ association.id }}">
+						<i class="fas fa-align-left"></i>
+						<span>Page d'adhésion</span>
+					</a>
+				</li>
+				<li>
+					<a href="/tableau-de-bord/accueil/{{ association.id }}">
+						<i class="fas fa-shopping-cart"></i>
+						<span>Billetterie</span>
+					</a>
+				</li>
+				<li>
+					<a href="/tableau-de-bord/accueil/{{ association.id }}">
+						<i class="far fa-newspaper"></i>
+						<span>Ajouter des news</span>
+					</a>
+				</li>
+				<li>
+					<a href="/tableau-de-bord/accueil/{{ association.id }}">
+						<i class="fas fa-info-circle"></i>
+						<span>Informations</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+		{% block contenu %} {% endblock %} 
+	</span>
+	
+		{% endblock %}
+	

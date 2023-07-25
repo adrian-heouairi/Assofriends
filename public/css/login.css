@@ -1,0 +1,102 @@
+
+.header{
+	width: 100%;
+	height: 120vh;
+	background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(/img/aide.jpg);
+	background-size: cover;
+	background-position: center;
+	position: relative;
+
+}
+
+
+
+/*---------Css pour inscription-connexion-mot de passe oublié--------*/
+
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    height: auto;
+}
+.form-holder {
+    background: #fff;
+    width: 450px;
+    max-width: 90%;
+    padding: 50px 0px;
+    opacity: .9;
+    border-radius: 10px;
+}
+.logo{
+    display: block;
+    width: 100px;
+    margin: 0px auto;
+    border-radius: 20px;
+    background: #222;
+    padding: 10px;
+}
+.form-holder h2{
+    color: black;
+    padding: 10px;
+    text-align: center;
+    font-size: 30px;
+}
+.form .form-group{
+    width: 90%;
+    margin: 20px auto;
+    padding: 10px;
+    position: relative;
+}
+.form-group input{
+    width: 87%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #222;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 15px;
+    border-bottom: 2px solid #777;
+    border-radius: 5px;
+    padding-left: 40px;
+    transition: 0.5s;
+}
+.form-group img{
+    width: 26px;
+    position: absolute;
+    left: 15px;
+    top: 13px;
+}
+
+.form-group button{
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: black;
+    font-size: 20px;
+    border: 2px solid #777;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.form-group input:focus{
+    background: #5D9DE7;
+    border-color: #0088FF;
+}
+.form-group button:hover{
+    background: #5D9DE7;
+}
+.form-group a{
+    color: #999;
+    text-decoration: none;
+    font-size: 20px;
+}
+.form-group a:hover{
+    color: #555;
+}
+.form-group .right-link{
+    float: right;
+}

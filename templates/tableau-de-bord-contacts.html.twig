@@ -1,0 +1,45 @@
+{% extends 'base-tableau-de-bord.html.twig' %}
+
+{% block title %}Contacts (liste des adhérents){% endblock %}
+
+{% block stylesheets %}
+        <link type="text/css" rel="stylesheet" href="/css/contact.css">
+{% endblock %}
+
+{% block contenu %}
+<section class="section-1">
+    <h1>Contacts (liste des adhérents)</h1>
+    
+    <button onclick="
+        boites = document.querySelectorAll('input:checked[customemail]');
+        if (boites.length == 0) return;
+        liste = [];
+        for (i = 0; i < boites.length; i++) liste.push(boites[i].getAttribute('customemail'));
+        window.location.href = '/tableau-de-bord/publipostage/{{ association.id }}/' + liste.join(',');
+    ">
+    Envoyer un e-mail aux adhérents sélectionnés</button>
+    
+    <table class="table table-responsive">
+        <thead>
+        <tr>
+            <th>Envoyer un e-mail</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Adresse e-mail</th>
+            <th>Date de fin de l'adhésion</th>
+        </tr>
+        </thead>
+        {% for adhesion in adhesions %}
+        <tbody>
+        <tr>
+            <td><input type="checkbox" customemail="{{ adhesion.userAdherent.email }}"></td>
+            <td>{{ adhesion.userAdherent.nom }}</td>
+            <td>{{ adhesion.userAdherent.prenom }}</td>
+            <td>{{ adhesion.userAdherent.email }}</td>
+            <td>{{ adhesion.dateFin|date() }}</td>
+        </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+</section>
+{% endblock %}

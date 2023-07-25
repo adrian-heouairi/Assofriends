@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ titre }}{% endblock %}
+
+{% block stylesheets %}
+        	<link type="text/css" rel="stylesheet" href="/css/formulaire.css">
+{% endblock %}
+
+{% block body %}
+
+{{ titre }}
+
+{{ form(formulaire) }}
+
+{% endblock %}

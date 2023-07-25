@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+{% block title %}Accueil{% endblock %}
+		{% block stylesheets %}
+        	<link type="text/css" rel="stylesheet" href="/css/accueil.css">
+        {% endblock %}
+    {% block body %}
+	
+		<div class="intro">
+		<h1>Une solution complète pour gérer votre association</h1>
+		<p>Accessible partout, sans installation, sécurisé et en constante amélioration.</p>
+	</div>
+	</section>
+
+	<!-----Prix------->
+	<section class="prix">
+		<h1>Nos formules</h1>
+		<p>Choisissez ci-dessous une formule en fonction de votre nombre d'adhérents :</p>
+		<div class="row">
+			<div class="prix-col">
+				<h3>Free</h3>
+				<p>Gratuit pour les associations ayant jusqu'à 30 adhérents</p>
+			</div>
+			<div class="prix-col">
+				<h3>Basic</h3>
+				<p>10 € par mois pour les associations ayant jusqu'à 200 adhérents</p>
+			</div>
+			<div class="prix-col">
+				<h3>Pro</h3>
+				<p>20 € par mois pour les associations ayant jusqu'à 500 adhérents</p>
+			</div>
+			<div class="prix-col">
+				<h3>Premium</h3>
+				<p>50 € par mois pour les associations de plus de 500 adhérents</p>
+			</div>
+		</div>
+	</section>
+
+	<!-------fonctionnalités-------->
+	<section class="fonctions">
+		<h1>Fonctionnalités</h1>
+
+		<div class="row">
+			<div class="fonc-col">
+				<img src="/img/adherer.jpg">
+				<div class="calque">
+					<h3>Gestion d'adhérents</h3>
+				</div>
+			</div>
+			<div class="fonc-col">
+				<img src="/img/mail.jpg">
+				<div class="calque">
+					<h3>Emailing</h3>
+				</div>
+			</div>
+			<div class="fonc-col">
+				<img src="/img/billet.jpeg">
+				<div class="calque">
+					<h3>Billetterie</h3>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	{% endblock %}

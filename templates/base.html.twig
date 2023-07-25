@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>{% block title %}Bienvenue!{% endblock %} - AssoFriends</title>
+        <link rel="stylesheet" type="text/css" href="/css/base.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"  >
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;600;700&display=swap" rel="stylesheet">
+        {% block stylesheets %}
+        {% endblock %}
+    
+    </head>
+    <body>
+        
+        <section class="header">
+        <nav class="menu-haut">
+            <a href="/"><img src="/img/logo.png"></a>
+            <div class="nav-liens" id="navLinks">
+                <i class="fas fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="/">ACCUEIL</a></li>
+                    <li><a href="#">ASSOCIATIONS</a></li>
+                    {% if app.user %} 
+                    <li><a href="/creation-association">CRÉER UNE ASSOCIATION</a></li> 
+                    <li><a href="#">{{ app.user.email }} - MON COMPTE</a></li>
+                    <li><a href="/mes-associations">MES ASSOCIATIONS</a></li>
+                    <li><a href="/logout">SE DÉCONNECTER</a></li> 
+                    {% else %}                  
+                    <li><a href="/inscription">S'INSCRIRE</a></li>
+                    <li><a href="/login">SE CONNECTER</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            <i class="fas fa-bars" onclick="showMenu()"></i>
+        </nav>
+    
+
+    {% block javascripts %}
+
+    <script>
+        var navLinks = document.getElementById("navLinks");
+
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+        function hideMenu(){
+            navLinks.style.right = "-200px";
+        }
+    </script>
+
+        {% endblock %}
+        
+        {% block body %}{% endblock %}
+
+    </body>
+</html>
